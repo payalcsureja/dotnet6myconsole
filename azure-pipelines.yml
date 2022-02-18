@@ -20,7 +20,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: publish 
-    arguments: -r win-x64 -p:PublishSingleFile=True --self-contained false -o $(Build.ArtifactStagingDirectory)
+    arguments: --configuration $(BuildConfiguration) --self-contained -r win10-x64 --output $(build.artifactstagingdirectory)
     projects: '**/*.csproj'
     publishWebProjects: false
     zipAfterPublish: false
