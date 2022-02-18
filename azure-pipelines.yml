@@ -16,12 +16,15 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)' 
 
+
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish'
+    command: publish 
+    arguments: -r win-x64 -p:PublishSingleFile=True --self-contained false -o $(Build.ArtifactStagingDirectory)
+    projects: '**/*.csproj'
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
+  enabled: true
 
 - task: PublishBuildArtifacts@1
   inputs:
