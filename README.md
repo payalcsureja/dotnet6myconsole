@@ -61,6 +61,8 @@ cd APP
 
 
 release pipeline notes:
+https://subhankarsarkar.com/dotnet-core-webjob-console-app-ci-cd-using-azure-devops-pipelines/
+https://devopsjournal.io/blog/2019/08/17/AzureDevOps-Run-NET-Core
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
