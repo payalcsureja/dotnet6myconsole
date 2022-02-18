@@ -23,7 +23,7 @@ steps:
     arguments: -r win-x64 -p:PublishSingleFile=True --self-contained false -o $(Build.ArtifactStagingDirectory)
     projects: '**/*.csproj'
     publishWebProjects: false
-    zipAfterPublish: True
+    zipAfterPublish: false
   enabled: true
 
 - task: PublishBuildArtifacts@1
